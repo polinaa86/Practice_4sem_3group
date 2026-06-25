@@ -1,0 +1,11 @@
+---
+- name: Deploy Telegram Bot
+  hosts: all
+
+  tasks:
+
+    - name: Pull image
+      shell: docker pull registry/libbot:latest
+
+    - name: Restart bot
+      shell: docker compose -f docker-compose.sqlite.yml up -d
